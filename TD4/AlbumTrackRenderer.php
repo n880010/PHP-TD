@@ -42,7 +42,7 @@ HTML;
     <p>Artiste : {$this->track->artiste}</p>
     <p>Album : {$this->track->album}</p>
     <p>Numéro de piste : {$this->track->num_piste}</p>
-    <p>Année : {$thxis->track->annee}</p>
+    <p>Année : {$this->track->annee}</p>
     <p>Genre : {$this->track->genre}</p>
     <p>Durée : {$this->track->duree} secondes</p>
     <audio controls>
