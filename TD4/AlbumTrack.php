@@ -5,9 +5,9 @@ require_once 'AudioTrack.php';
 
 class AlbumTrack extends AudioTrack {
     // Attributs privés spécifiques à AlbumTrack
-    private string $album;
-    private int $annee;
-    private int $num_piste;
+    public string $album;
+    public int $annee;
+    public int $num_piste;
 
     public function __construct(
         string $titre,
