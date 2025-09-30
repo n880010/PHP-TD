@@ -1,0 +1,51 @@
+Q1: Dans quel fichier est définie la classe Logger, préciser son namespace
+
+R1: La classe Logger est définie dans le fichier src/Monolog/Logger.php et son namespace est Monolog\.
+
+Q2: Les classes ErrorHandler et Registry sont-elles définies dans le même namespace ? si oui, lequel ?
+
+R2: Oui, les classes ErrorHandler et Registry sont définies dans le même namespace Monolog\ car elles sont directement dans le répertoire src/Monolog/.
+
+Q3: Quelle est le namespace commun aux classes stockées dans des fichiers créés directement dans le répertoire Handler ?
+
+R3: Le namespace commun est Monolog\Handler\.
+
+Q4: Indiquez le chemin complet du fichier dans lequel est déclarée la classe \Monolog\Processor\HostnameProcessor
+
+R4: Le chemin complet est src/Monolog/Processor/HostnameProcessor.php.
+
+Q5: Indiquez le chemin complet du fichier dans lequel est déclarée la classe \Monolog\Handler\Slack\SlackRecord
+
+R5: Le chemin complet est src/Monolog/Handler/Slack/SlackRecord.php.
+
+Q6: On souhaite ajouter la classe JsonFormatter dont le namespace est \Monolog\Formatter ; où doit-on créer le fichier correspondant ? et comment doit-on le nommer ?
+
+R6: Le fichier doit être créé dans src/Monolog/Formatter/ et doit s'appeler JsonFormatter.php.
+
+Q7: On créé le fichier src/Monolog/Formatter/sql/SqlFormatter.php ; Indiquez le nom de la classe qu'il peut définir et son namespace.
+
+R7: La classe doit s'appeler SqlFormatter et son namespace est Monolog\Formatter\Sql\.
+
+Q8: On change le nom de la classe \Monolog\ErrorHandler en \Monolog\Handler\ErrorHandler ; quel est l'impact de cette modification sur le fichier dans lequel la classe est déclarée ?
+
+R8: Le fichier doit être déplacé de src/Monolog/ErrorHandler.php vers src/Monolog/Handler/ErrorHandler.php.
+
+Q9: En exécutant un programme utilisant cette librairie, on obtient un message d'erreur du type "\Monolog\Handler\Curl\Utils : class not found". D'où peut venir l'erreur ? Il y a plusieurs possibilités.
+
+R9: Les possibilités sont :
+
+Le fichier src/Monolog/Handler/Curl/Utils.php n'existe pas
+
+La classe dans le fichier ne s'appelle pas Utils
+
+Le namespace dans le fichier n'est pas Monolog\Handler\Curl\
+
+L'autoloader PSR-4 n'est pas correctement configuré
+
+Q10: On souhaite renommer le répertoire "src/" en "lib/"; Quel est l'impact de cette modification ? que faut-il changer dans le projet
+
+R10: Il faut modifier la configuration PSR-4 dans le composer.json pour changer :
+
+json
+"psr-4": {"Monolog\\": "lib/Monolog/"}
+Probleme dans le composer l'autoloader on doit le changer.
