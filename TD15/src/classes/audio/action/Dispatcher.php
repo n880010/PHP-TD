@@ -86,8 +86,9 @@ class Dispatcher {
             $repo = DeefyRepository::getInstance();
 
             // Récupérer les playlist de l'utilisateur connecté
-            $stmt = $repo->findPlaylistsByUserId([$user['id']]);
-            $playlists = $stmt->fetchAll();
+            // Pas besoin de crochets ici car c'est l'execute de la PDO qui en a besoin
+            $stmt = $repo->findPlaylistsByUserId($user['id']);
+            $playlists = $stmt;
 
             // Menu utilisateur
             $nav .= '<a href="?action=add-playlist">Créer Playlist</a> | ';
