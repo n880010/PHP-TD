@@ -13,9 +13,11 @@ class Playlist extends AudioList {
     }
 
     public function ajouterPiste(AudioTrack $a): void {
+        // Récupérer le tableau actuel via le getter
         $tabAudio = $this->__get('tabAudio');
         $tabAudio[] = $a;
         
+        // Mettre à jour les propriétés
         $this->mettreAJourProprietes($tabAudio);
     }
 

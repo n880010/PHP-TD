@@ -13,9 +13,11 @@ class Playlist extends AudioList {
     }
 
     public function ajouterPiste(AudioTrack $a): void {
+        // Récupérer le tableau actuel via le getter
         $tabAudio = $this->__get('tabAudio');
         $tabAudio[] = $a;
         
+        // Mettre à jour les propriétés
         $this->mettreAJourProprietes($tabAudio);
     }
 
@@ -40,9 +42,9 @@ class Playlist extends AudioList {
         $this->mettreAJourProprietes($tabAudio);
     }
 
-    // Méthode privée pour mettre à jour toutes les propriétés
-    private function mettreAJourProprietes(array $nouveauTabAudio): void {
-        // On ne peut pas modifier directement les propriétés privées du parent
+    // Méthode public pour mettre à jour toutes les propriétés
+    public function mettreAJourProprietes(array $nouveauTabAudio): void {
+        // On ne peut pas modifier directement les propriétés public du parent
         // On doit recréer l'objet ou utiliser une autre approche
         // Pour l'instant, on va stocker le tableau dans une propriété locale
         $this->tabAudioLocal = $nouveauTabAudio;
